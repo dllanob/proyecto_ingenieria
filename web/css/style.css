@@ -7,6 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 /* reset */
 
 @import url(http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
 article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
 ol,ul{list-style:none;margin:0;padding:0;}
@@ -259,7 +260,7 @@ body {
 .h_icon{
 	float: right;
 	margin-top: 15px;
-	width: 17.777%;
+	width: 17.77%;
 	
 }
 .icon1:before,.icon1:after {
@@ -270,8 +271,8 @@ body {
 	clear: both;
 }
 .icon1 li {
-	float: left;
-	position: relative;
+	float: right;
+	display: inline-block;
 
 }
 .icon1 li:last-child{
@@ -410,6 +411,8 @@ body {
 	line-height: 1.8em;
 }
 .sub-icon1.list{
+	background: red;
+	float: left;
 	padding: 20px 10px;
 	z-index: 999;
 }
@@ -1520,6 +1523,8 @@ p.para{
    Estilos propios
    ========================================================================== */
 
+/*--------------- header --------------*/
+
 .logo {
 	margin: 0;
 	color: #3DC4B6;
@@ -1527,18 +1532,74 @@ p.para{
 	font-family: 'Oleo Script Swash Caps', cursive;
 }
 
+.header .icon-usuario {
+	color: #3DC4B6;
+	width: 50px;
+	margin: 15px 0 0 15px;
+	float: right;
+	font-size: 38px;
+	display: inline-block;
+}
+
+/*--------------- carrito --------------*/
+
+.header .carrito-logo {
+	float: right;
+	margin: 15px 0 0 0px;
+}
+
+.icon-titulo {
+	font-size: 27px;
+	margin-right: 5px;
+}
+
+.carrito-empty {
+	width: 100%;
+	height: 350px;
+	padding: 100px 0 0 0;
+	text-align: center;
+	box-sizing:border-box;
+	background: #EBEBEB;
+
+	display: none;
+}
+
+.carrito-empty > span {
+	padding: 40px;
+	font-size: 80px;
+	color: #fff;
+	background: #4CCFC1;
+	border-radius: 100%;
+}
+
+.carrito-empty > h1 {
+	font-size: 35px;
+	color: #4C4C4C;
+	margin: 45px 0 0 0px;
+}
+
+.carrito-empty > p {
+	font-size: 20px;
+	color: #A1A1A1;
+} 
+
+.carrito-empty > p a {
+	color: #4CCFC1;
+}
+
 .carrito-cont {
+	/*display: none;*/
 }
 
 .carrito-cont .titulos-cont {
 	height: 50px;
-	border: 3px solid #3DC4B6;
-	color: #3DC4B6;
+	background: #4CCFC1;
+	color: #FFF;
 }
 
 .carrito-cont .titulos-cont .titulo {
-	padding: 15px;
-	font-size: 20px;
+	padding: 12px;
+	font-size: 23px;
 	box-sizing:border-box;
 }
 
@@ -1576,14 +1637,37 @@ p.para{
 .carrito-cont .product-cont ul li {
 	height: 70px;
 	margin: 10px 0;
-	padding: 20px;
+	padding: 20px 10px;
 	border-top: 2px solid #E7E7E7;
 	box-sizing:border-box;
 }
 
+.carrito-cont .product-cont ul li .producto {
+	display: inline-block;
+	text-align: center;
+	font-size: 23px;
+	color: #494949;
+}
+
+.carrito-cont .product-cont ul li .nombre {
+	width: 71%;
+	padding-left: 20px;
+	text-align: left;
+	box-sizing:border-box;
+
+}
+
+.carrito-cont .product-cont ul li .cantidad {
+	width: 14%;
+}
+
+.carrito-cont .product-cont ul li .precio {
+	width: 14%;
+}
+
 .carrito-cont .total-cont {
 	height: 40px;
-	background: #3DC4B6;
+	background: #4CCFC1;
 }
 
 .carrito-cont .total-cont .items {
@@ -1593,7 +1677,6 @@ p.para{
 }
 
 .carrito-cont .total-cont .total-item {
-	
 	width: 49%;
 	height: 100%;
 	padding: 7px;
@@ -1610,4 +1693,101 @@ p.para{
 
 .carrito-cont .total-cont .total2 {
 	right: 0;	
+}
+/* BOTON */
+
+.carrito-cont .button-cont {
+	margin-top: 20px;
+	text-align: right;
+}
+.carrito-cont .button-cont .boton {
+	border: none;
+	width: 180px;
+	height: 50px;
+	color: #fff;
+	cursor: pointer;
+	background: #85CE17;
+	font-size: 20px;
+	display: inline-block;
+}
+
+.carrito-cont .button-cont .boton:hover {
+	background: #8ABF28;
+}
+
+/*--------------- registro --------------*/
+
+.sesion-cont {
+	width: 100%;
+	height: 500px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.sesion-cont .registro-cont .form-registro {
+
+}
+
+.sesion-cont .sesion {
+	width: 49%;
+	height: 500px;
+	padding: 10px 20px;
+	vertical-align: top;
+	display: inline-block;
+	background: #EBEBEB;
+	text-align: left;
+	box-sizing:border-box;
+}
+
+.sesion-cont .sesion h2 {
+	font-size: 30px;
+	color: #4CCFC1;
+}
+
+.sesion-cont .sesion .formulario {
+	width: 100%;
+	display: inline-block;
+}
+
+.sesion-cont .sesion .formulario .input-text {
+	width: 90%;
+	height: 40px;
+	color: #303030;
+	padding: 10px;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	margin-top: 15px;
+	box-sizing:border-box;
+}
+
+.sesion-cont .sesion .formulario .genero {
+	display: block;
+	margin-top: 15px;
+}
+
+.sesion-cont .sesion .formulario .input-check {
+	width: 15px;
+	height: 15px;
+	margin-top: 20px;
+}
+
+.sesion-cont .sesion .formulario label {
+	color: #4A4A4A;
+}
+
+.sesion-cont .sesion .formulario .boton {
+	width: 150px;
+	height: 40px;
+	border: none;
+	cursor: pointer;
+	background: #4CCFC1;
+	color: #fff;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	margin-top: 20px;
+	display: block;
+}
+
+.sesion-cont .sesion .formulario .boton:hover {
+	background: #009A98;
 }
