@@ -1,9 +1,3 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -33,11 +27,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="wrap">
 	<div class="header">
 		<div class="logo">
-			<a href="index.html"><p class="logo">TotalMakeOver</p></a>
+			<a href="home.php"><p class="logo">TotalMakeOver</p></a>
 		</div>
 		
-		<a href="registro.html"><span class="icon-usuario icon-user"></span></a>
-		<a href="carrito.html" class="carrito-logo"><img src="web/images/cart.png" alt=""></a>
+		<a href="registro.php"><span class="icon-usuario icon-user"></span></a>
+		<a href="carrito.php" class="carrito-logo"><img src="web/images/cart.png" alt=""></a>
 		<div class="h_search">
     		<form>
     			<input type="text" value="">
@@ -53,10 +47,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="header_sub">
 		<div class="h_menu">
 			<ul>
-				<li><a href="index.html">Inicio</a></li> |
+				<li><a href="home.php">Inicio</a></li> |
 				<li><a href="handbags.html">Bolsos</a></li> |
-				<li><a href="destacados.html">Productos destacados</a></li> |
-				<li><a href="wallets.html">Carteras</a></li>  |
+				<li><a href="destacados.php">Productos destacados</a></li> |
 				<li><a href="shoes.html">Zapatos</a></li> |
 				<li><a href="service.html">Servicios</a></li> |
 				<li><a href="contact.html">Contacto</a></li>
@@ -66,9 +59,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	          <nav class="nav">	        	
 	    	    <a href="#" id="w3-menu-trigger"> </a>
 	                  <ul class="nav-list" style="">
-	            	        <li class="nav-item"><a class="active" href="index.html">Inicio</a></li>
+	            	        <li class="nav-item"><a class="active" href="home.php">Inicio</a></li>
 							<li class="nav-item"><a href="handbags.html">Bolsos</a></li>
-							<li class="nav-item"><a href="destacados.html">Productos destacados</a></li>
+							<li class="nav-item"><a href="destacados.php">Productos destacados</a></li>
 							<li class="nav-item"><a href="shoes.html">Zapatos</a></li>
 							<li class="nav-item"><a href="service.html">Servicios</a></li>
 							<li class="nav-item"><a href="contact.html">Contacto</a></li>
@@ -94,7 +87,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<section class="sesion-cont">
 			<section class="sesion">
 				<h2>Crea una nueva cuenta</h2>
-				<form class="formulario" action="registro.php">
+				<form class="formulario" method="post" action="login.php">
 					<input type="text" name="nombre" class="input-text" placeholder="Nombre">
 					<input type="text" name="apellidos" class="input-text" placeholder="Apellidos">
 					<input type="text" name="usuario" class="input-text" placeholder="Elige nombre de usuario">
@@ -114,10 +107,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 			<section class="sesion">
 				<h2>Inicia sesión</h2>
-				<form class="formulario" action="inicio.php" method="POST">
-					<input type="text" name="usuario" class="input-text" placeholder="Nombre de usuario">
-					<input type="password" name="contraseña" class="input-text" placeholder="Contraseña"><br>
-					<input type="checkbox" name="remember" class="input-check">
+				<form class="formulario" action="login.php" method="POST">
+					<?php 
+						if(isset($_GET['error'])){
+							echo '<p class="error" style="width: 90%; margin-top: 10px; padding: 10px 20px; background: #FFD1D1; box-sizing:border-box; border: 2px solid #E20000; color: #E20000;">
+									<i class="icon-info"></i> Los datos ingresados no son validos 
+									</p>';
+						}
+					 ?>
+					
+					<input type="text" name="NombreUsuario" class="input-text" placeholder="Nombre de usuario">
+					<input type="password" name="Password" class="input-text" placeholder="Contraseña"><br><br>
+					<input type="checkbox" name="remember" class="input-check" style="margin-top:7px;">
 					<label for="remember">Manetener mi sesión abierta.</label>
 					<button type="submit" class="boton">Iniciar sesión</button>
 

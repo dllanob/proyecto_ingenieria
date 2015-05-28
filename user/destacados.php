@@ -1,23 +1,17 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
-<title> Carteras </title>
+<title> Productos destacados</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link rel="shortcut icon" href="web/images/cart.ico" type="image/x-ic"/>
+<link rel="shortcut icon" href="../web/images/cart.ico" type="image/x-ic"/>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
-<link href="web/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" href="fonts/style.css">
-<script src="web/js/jquery.min.js"></script> 
+<link href="../web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="../fonts/style.css">
+<script src="../web/js/jquery.min.js"></script> 
 <!-- start top_js_button -->
-<script type="text/javascript" src="web/js/move-top.js"></script>
-<script type="text/javascript" src="web/js/easing.js"></script>
+<script type="text/javascript" src="../web/js/move-top.js"></script>
+<script type="text/javascript" src="../web/js/easing.js"></script>
    <script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		
@@ -33,11 +27,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="wrap">
 	<div class="header">
 		<div class="logo">
-			<a href="index.html"><p class="logo">TotalMakeOver</p></a>
+			<a href="home-priv.php"><p class="logo">TotalMakeOver</p></a>
 		</div>
 		
-		<a href="registro.html"><span class="icon-usuario icon-user"></span></a>
-		<a href="carrito.html" class="carrito-logo"><img src="web/images/cart.png" alt=""></a>
+		<a href="cerrar.php"><span class="icon-usuario icon-exit"></span></a>
+		<a href="carrito.php" class="carrito-logo"><img src="../web/images/cart.png" alt=""></a>
 		<div class="h_search">
     		<form>
     			<input type="text" value="">
@@ -53,10 +47,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="header_sub">
 		<div class="h_menu">
 			<ul>
-				<li><a href="index.html">Inicio</a></li> |
+				<li><a href="home-priv.php">Inicio</a></li> |
 				<li><a href="handbags.html">Bolsos</a></li> |
-				<li><a href="destacados.html">Productos destacados</a></li> |
-				<li class="active"><a href="wallets.html">Carteras</a></li>  |
+				<li class="active"><a href="destacados.html">Productos destacados</a></li> |
 				<li><a href="shoes.html">Zapatos</a></li> |
 				<li><a href="service.html">Servicios</a></li> |
 				<li><a href="contact.html">Contacto</a></li>
@@ -66,7 +59,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	          <nav class="nav">	        	
 	    	    <a href="#" id="w3-menu-trigger"> </a>
 	                  <ul class="nav-list" style="">
-	            	        <li class="nav-item"><a class="active" href="index.html">Inicio</a></li>
+	            	        <li class="nav-item"><a class="active" href="home-priv.php">Inicio</a></li>
 							<li class="nav-item"><a href="handbags.html">Bolsos</a></li>
 							<li class="nav-item"><a href="destacados.html">Productos destacados</a></li>
 							<li class="nav-item"><a href="shoes.html">Zapatos</a></li>
@@ -80,7 +73,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			    </form>
 			</div>
 	          <div class="clear"> </div>
-	          <script src="web/js/responsive.menu.js"></script>
+	          <script src="../web/js/responsive.menu.js"></script>
          </div>	
 	<div class="clear"></div>
 </div>
@@ -90,78 +83,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="main_bg">
 <div class="wrap">	
 	<div class="main">
-		<h2 class="style top">Carteras destacadas</h2>
+		<h2 class="style top">Productos destacados</h2>
 		<!-- start grids_of_3 -->
+		<?php
+			include 'conexion.php';
+			$re = mysql_query("select * from producto ") or die (mysql_error());
+			while ($f=mysql_fetch_array($re)) {
+		?>
 		<div class="grids_of_3">
 			<div class="grid1_of_3">
-				<a href="details.html">
-					<img src="web/images/w_pic1.jpg" alt=""/>
-					<h3>branded handbags</h3>
+				<a href="details.php?id_producto=<?php echo $f['id_producto'];?>">
+					<img src="<?php echo $f['foto'] ?>" alt="thum_producto" width="200"/>
+					<h3><?php echo $f['nombre'] ?></h3>
 					<div class="price">
-						<h4>$299<span>indulge</span></h4>
+						<h4>$<?php echo $f['precio'] ?><a href="details.php?id_producto=<?php echo $f['id_producto'];?>"><span>Ver</span></a></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
 			</div>
-			<div class="grid1_of_3">
-				<a href="details.html">
-					<img src="web/images/w_pic2.jpg" alt=""/>
-					<h3>branded handbags</h3>
-					<div class="price">
-						<h4>$299 <span>indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="grid1_of_3">
-				<a href="details.html">
-					<img src="web/images/w_pic3.jpg" alt=""/>
-					<h3>branded handbags</h3>
-					<div class="price">
-						<h4>$299<span>indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="clear"></div>
 		</div>
-		<div class="grids_of_3">
-			<div class="grid1_of_3">
-				<a href="details.html">
-					<img src="web/images/w_pic4.jpg" alt=""/>
-					<h3>branded handbags</h3>
-					<div class="price">
-						<h4>$299<span>indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="grid1_of_3">
-				<a href="details.html">
-					<img src="web/images/w_pic5.jpg" alt=""/>
-					<h3>branded handbags</h3>
-					<div class="price">
-						<h4>$299<span>indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="grid1_of_3">
-				<a href="details.html">
-					<img src="web/images/w_pic6.jpg" alt=""/>
-					<h3>branded handbags</h3>
-					<div class="price">
-						<h4>$299<span>indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="clear"></div>
-		</div>	
+		<?php 		
+			 } 
+		 ?>
+		 <div class="clear"></div><br>	
 		<!-- end grids_of_3 -->
 	</div>
 </div>
-</div>	
+</div>		
 
 <!-- start footer -->
 <div class="footer_bg1">
